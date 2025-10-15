@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   root to: "messages#index"
   devise_for :users
+  resources :users, only: [:edit, :update]
   get "up" => "rails/health#show", as: :rails_health_check
 
 end
